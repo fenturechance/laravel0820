@@ -6,12 +6,16 @@ use Illuminate\Database\Eloquent\Model;
 
 class Product extends Model
 {
-    protected $table='product';
+    protected $table = 'products';
 
-
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
     protected $fillable = [
-        'name', 'price', 
-    ]; //只有這些欄位可以被新增
+        'name', 'price',
+    ];
 
     /**
      * The attributes that should be hidden for arrays.
@@ -19,7 +23,6 @@ class Product extends Model
      * @var array
      */
     protected $hidden = [
-    ]; //不希望user的密碼被洩漏
 
-   
+    ];
 }

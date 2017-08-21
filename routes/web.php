@@ -31,7 +31,16 @@ Route::get('/posts/{id}', function($id){
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/user', 'UserController@index');
-Route::get('/user/delete/{id}', 'UserController@destroy');
-Route::post('/user', 'UserController@store'); 
+ // public function index() {return view('user',['users'=>User::all() ]); }
 
-Route::get('/product', 'ProductController@index');
+Route::get('/user/delete/{id}', 'UserController@destroy');
+// public function destroy($id) {User::destroy($id); return redirect('/user'); }
+
+Route::post('/user', 'UserController@store'); 
+// public function store(Request $request) {$validator = Validator::make($request->all(),['name'=>'required', 'email'=>'required|unique:users', 'password'=>'required|confirmed']); if($validator->fails()){return redirect('/user') ->withErrors($validator) ->withInput(); } User::create($request->all()); return redirect('/user'); }
+
+
+Route::get('/products', 'ProductController@list');
+ // public function list() {return view('product-list'); }
+
+// Route::get('/product/add_cart/{id}','ProductController@add_to_cart');
