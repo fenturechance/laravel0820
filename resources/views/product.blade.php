@@ -18,9 +18,9 @@
 			<tbody id="tbody">
 				@foreach($product as $productone )
 				<tr>
-					<td>{{$productone->$id}}</td>
-					<td>{{$productone->$name}}</td>
-					<td>{{$productone->$price}}</td>
+					<td>{{$productone->id}}</td>
+					<td>{{$productone->name}}</td>
+					<td>{{$productone->price}}</td>
 				</tr>
 				@endforeach
 			</tbody>
