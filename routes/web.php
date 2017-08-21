@@ -34,4 +34,4 @@ Route::get('/user', 'UserController@index');
 Route::get('/user/delete/{id}', 'UserController@destroy');
 Route::post('/user', 'UserController@store'); 
 
-Route::get('/product', 'ProductController@index'); 
+Route::get('/product', 'ProductController@index');
