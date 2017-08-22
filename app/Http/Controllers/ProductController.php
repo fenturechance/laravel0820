@@ -22,9 +22,9 @@ class ProductController extends Controller
         return view('product-list');
     }
 
-    public function add_cart(Request $request, $id) {
+    public function add_to_cart(Request $request, $id) {
 
-        // 取得已經存在 session 的資料
+        // 取得已經存在 session 的資料(避免覆蓋)
         $prev = $request->session()->get('cart');
 
         // 預設 arr 為空
@@ -32,7 +32,7 @@ class ProductController extends Controller
 
         // 如果 prev 已經含有資料 則先 decode 到 arr
         if( $prev != null ) {
-            $arr = json_decode($prev);
+            $arr = json_decode($prev); //session裡面要經過json decode
         }
 
         // 從尾部新增內容（ 同 push )
@@ -48,7 +48,7 @@ class ProductController extends Controller
 
     public function list_cart(Request $request) {
 
-        // 取得 session 裡面的資料
+        // 取得 session 裡面的資料成為一個陣列
         $id_list = json_decode($request->session()->get('cart'));
 
         $prod_list = [];
