@@ -20,7 +20,7 @@ $(function() {
 @section('content')
 <div class="container">
     <div class="col-md-8 col-md-offset-2">
-        <h1>All Products</h1>
+        <h1>購物車</h1>
         <table class="table table-bordered">
             <thead>
                 <tr>
@@ -35,7 +35,8 @@ $(function() {
 
             </tbody>
         </table>
-        <a href="/cart" class="btn btn-primary">結帳</a>
+         <a href="/products" class="btn btn-danger">繼續購物</a>
+        <!-- <a href="/cart" class="btn btn-primary">結帳</a> -->
     </div>
 </div>
 
